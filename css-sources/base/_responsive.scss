@@ -1,0 +1,127 @@
+//
+//	_responsive.scss
+//	Адаптивность
+//
+//	Copyright © 2018 Andrey Shpigunov. All right reserved.
+//
+
+
+@mixin screen-xlarge {
+	@media (min-width: $screen-xlarge) { @content; }
+}
+@mixin screen-large {
+	@media (max-width: $screen-large) { @content; }
+}
+@mixin screen-medium {
+	@media (max-width: $screen-medium) { @content; }
+}
+@mixin screen-small {
+	@media (max-width: $screen-small) { @content; }
+}
+@mixin screen-xsmall {
+	@media (max-width: $screen-xsmall) { @content; }
+}
+
+
+//	Использование миксинов
+//	----------------------
+// @include screen-xlarge { ... }
+// @include screen-large { ... }
+// @include screen-medium { ... }
+// @include screen-small { ... }
+// @include screen-xsmall { ... }
+
+
+img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+}
+
+.xsmall-show,
+.small-show,
+.medium-show,
+.large-show,
+.xlarge-show {
+	display: none;
+}
+
+@media only screen and (max-width: $screen-xsmall) {
+
+	.xsmall-hide {
+		display: none !important;
+	}
+	.xsmall-show {
+		display: block;
+	}
+	.xsmall-show-inline {
+		display: inline;
+	}
+	.xsmall-show-inlineblock {
+		display: inline-block;
+	}
+}
+
+@media only screen and (max-width: $screen-small) {
+
+	.small-hide {
+		display: none !important;
+	}
+	.small-show {
+		display: block;
+	}
+	.small-show-inline {
+		display: inline;
+	}
+	.small-show-inlineblock {
+		display: inline-block;
+	}
+}
+
+@media only screen and (min-width: $screen-small + 1) and (max-width: $screen-medium) {
+	
+	.medium-hide {
+		display: none !important;
+	}
+	.medium-show {
+		display: block;
+	}
+	.medium-show-inline {
+		display: inline;
+	}
+	.medium-show-inlineblock {
+		display: inline-block;
+	}
+}
+
+@media only screen and (min-width: $screen-medium + 1) and (max-width: $screen-large) {
+	
+	.large-hide {
+		display: none !important;
+	}
+	.large-show {
+		display: block;
+	}
+	.large-show-inline {
+		display: inline;
+	}
+	.large-show-inlineblock {
+		display: inline-block;
+	}
+}
+
+@media only screen and (min-width: $screen-xlarge) {
+	
+	.xlarge-hide {
+		display: none !important;
+	}
+	.xlarge-show {
+		display: block;
+	}
+	.xlarge-show-inline {
+		display: inline;
+	}
+	.xlarge-show-inlineblock {
+		display: inline-block;
+	}
+}

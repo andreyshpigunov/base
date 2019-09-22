@@ -1,0 +1,463 @@
+//
+//	_grid_flex.scss
+//	Сетка на основе флексбокса
+//
+//	Copyright © 2018 Andrey Shpigunov. All right reserved.
+//
+
+
+.modules,
+.row {
+	margin-left: -$grid-gutters-large;
+	margin-right: -$grid-gutters-large;
+	margin-bottom: -$grid-gutters-large * 2;
+	
+	@include screen-medium {
+		margin-left: -$grid-gutters-medium;
+		margin-right: -$grid-gutters-medium;
+		margin-bottom: -$grid-gutters-medium * 2;	
+	}
+	
+	@include screen-small {
+		margin-left: -$grid-gutters-small;
+		margin-right: -$grid-gutters-small;
+		margin-bottom: -$grid-gutters-small * 2;	
+	}
+	
+	> .module,
+	> .column {
+		padding-left: $grid-gutters-large;
+		padding-right: $grid-gutters-large;
+		margin-bottom: $grid-gutters-large * 2;
+		
+		@include screen-medium {
+			padding-left: $grid-gutters-medium;
+			padding-right: $grid-gutters-medium;
+			margin-bottom: $grid-gutters-medium * 2;	
+		}
+		
+		@include screen-small {
+			padding-left: $grid-gutters-small;
+			padding-right: $grid-gutters-small;
+			margin-bottom: $grid-gutters-small * 2;	
+		}
+	}
+	
+	&.no-gutters {
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 0;
+		
+		> .module,
+		> .column {
+			padding-left: 0;
+			padding-right: 0;
+			margin-bottom: 0;
+		}
+	}
+	
+	&.-line {
+		margin-bottom: 0;
+		
+		> .module,
+		> .column {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+.modules,
+.row {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;						/* по умолчанию в css — nowrap */
+	
+	> .separator {
+		width: 100% !important;
+	}
+	
+//	Свойства флексбокс-контейнера
+//	-----------------------------
+	
+	&.direction-row,
+	&.large-direction-row {
+		flex-direction: row;
+	}
+	&.direction-row-reverse,
+	&.large-direction-row-reverse {
+		flex-direction: row-reverse;
+	}
+	&.direction-column,
+	&.large-direction-column {
+		flex-direction: column;
+	}
+	&.direction-column-reverse,
+	&.large-direction-column-reverse {
+		flex-direction: column-reverse;
+	}
+	
+	&.nowrap,
+	&.large-nowrap {
+		flex-wrap: nowrap;
+		white-space: normal;
+	}
+	&.wrap,
+	&.large-wrap {
+		flex-wrap: wrap;
+	}
+	&.wrap-reverse,
+	&.large-wrap-reverse {
+		flex-wrap: wrap-reverse;
+	}
+	
+	&.centered {
+		justify-content: center;
+	}
+	
+	
+	@media only screen and (min-width: $screen-xlarge) {
+		
+		&.xlarge-direction-row {
+			flex-direction: row;
+		}
+		&.xlarge-direction-row-reverse {
+			flex-direction: row-reverse;
+		}
+		&.xlarge-direction-column {
+			flex-direction: column;
+		}
+		&.xlarge-direction-column-reverse {
+			flex-direction: column-reverse;
+		}
+	
+		&.xlarge-nowrap {
+			flex-wrap: nowrap;
+			white-space: normal;
+		}
+		&.xlarge-wrap {
+			flex-wrap: wrap;
+		}
+		&.xlarge-wrap-reverse {
+			flex-wrap: wrap-reverse;
+		}
+	
+	}
+	
+	
+	@media only screen and (max-width: $screen-medium) {
+		
+		&.medium-direction-row {
+			flex-direction: row;
+		}
+		&.medium-direction-row-reverse {
+			flex-direction: row-reverse;
+		}
+		&.medium-direction-column {
+			flex-direction: column;
+		}
+		&.medium-direction-column-reverse {
+			flex-direction: column-reverse;
+		}
+	
+		&.medium-nowrap {
+			flex-wrap: nowrap;
+			white-space: normal;
+		}
+		&.medium-wrap {
+			flex-wrap: wrap;
+		}
+		&.medium-wrap-reverse {
+			flex-wrap: wrap-reverse;
+		}
+	
+	}
+	
+	
+	@media only screen and (max-width: $screen-small) {
+		
+		&.small-direction-row {
+			flex-direction: row;
+		}
+		&.small-direction-row-reverse {
+			flex-direction: row-reverse;
+		}
+		&.small-direction-column {
+			flex-direction: column;
+		}
+		&.small-direction-column-reverse {
+			flex-direction: column-reverse;
+		}
+	
+		&.small-nowrap {
+			flex-wrap: nowrap;
+			white-space: normal;
+		}
+		&.small-wrap {
+			flex-wrap: wrap;
+		}
+		&.small-wrap-reverse {
+			flex-wrap: wrap-reverse;
+		}
+	
+	}
+	
+	
+	@media only screen and (max-width: $screen-xsmall) {
+		
+		&.xsmall-direction-row {
+			flex-direction: row;
+		}
+		&.xsmall-direction-row-reverse {
+			flex-direction: row-reverse;
+		}
+		&.xsmall-direction-column {
+			flex-direction: column;
+		}
+		&.xsmall-direction-column-reverse {
+			flex-direction: column-reverse;
+		}
+	
+		&.xsmall-nowrap {
+			flex-wrap: nowrap;
+			white-space: normal;
+		}
+		&.xsmall-wrap {
+			flex-wrap: wrap;
+		}
+		&.xsmall-wrap-reverse {
+			flex-wrap: wrap-reverse;
+		}
+	
+	}
+	
+		
+//	Свойства флексбокс-элемента
+//	---------------------------
+
+	> .module,
+	> .column {
+		position: relative;
+		order: 0;
+		flex-grow: 0;			/* стандартно по умолчанию */
+		flex-shrink: 1;		/* стандартно по умолчанию */
+		flex-basis: 0;			/* по умолчанию в css — auto */
+		align-self: auto;		/* стандартно по умолчанию */
+		max-width: 100%;
+		
+		&.flex {
+			display: flex;
+		}
+		
+		&.large-offset-0 {
+			margin-left: 0;
+		}
+		&.large-auto {
+			flex-grow: 1;
+			flex-basis: auto;
+			max-width: none;
+		}
+		
+		@for $col from 1 through $grid-columns {
+			
+			&.large-#{$col} {
+				flex-basis: $col / $grid-columns * 100%;
+				max-width: $col / $grid-columns * 100%;
+			}
+			&.large-offset-#{$col} {
+				margin-left: $col / $grid-columns * 100%;
+			}
+			&.large-order-#{$col} {
+				order: $col;
+			}
+			
+		}
+		
+		
+		// Большой размер экрана
+		@media only screen and (min-width: $screen-xlarge) {
+		
+			&.xlarge-offset-0 {
+				margin-left: 0;
+			}
+			&.xlarge-auto {
+				flex-grow: 1;
+				flex-basis: auto;
+				max-width: none;
+			}
+			
+			@for $col from 1 through $grid-columns {
+			
+				&.xlarge-#{$col} {
+					flex-basis: $col / $grid-columns * 100%;
+					max-width: $col / $grid-columns * 100%;
+				}
+				&.xlarge-offset-#{$col} {
+					margin-left: $col / $grid-columns * 100%;
+				}
+				&.xlarge-order-#{$col} {
+					order: $col;
+				}
+				
+			}
+			
+		}
+
+
+		// Средний размер экрана (планшеты)
+		@media only screen and (max-width: $screen-medium) {
+		
+			&.medium-offset-0 {
+				margin-left: 0;
+			}
+			&.medium-auto {
+				flex-grow: 1;
+				flex-basis: auto;
+				max-width: none;
+			}
+			
+			@for $col from 1 through $grid-columns {
+			
+				&.medium-#{$col} {
+					flex-basis: $col / $grid-columns * 100%;
+					max-width: $col / $grid-columns * 100%;
+				}
+				&.medium-offset-#{$col} {
+					margin-left: $col / $grid-columns * 100%;
+				}
+				&.medium-order-#{$col} {
+					order: $col;
+				}
+				
+			}
+			
+		}
+
+
+		// Малый размер экрана (телефоны)
+		@media only screen and (max-width: $screen-small) {
+		
+			&.small-offset-0 {
+				margin-left: 0;
+			}
+			&.small-auto {
+				flex-grow: 1;
+				flex-basis: auto;
+				max-width: none;
+			}
+			
+			@for $col from 1 through $grid-columns {
+			
+				&.small-#{$col} {
+					flex-basis: $col / $grid-columns * 100%;
+					max-width: $col / $grid-columns * 100%;
+				}
+				&.small-offset-#{$col} {
+					margin-left: $col / $grid-columns * 100%;
+				}
+				&.small-order-#{$col} {
+					order: $col;
+				}
+				
+			}
+			
+		}
+		
+		
+		// Очень малый размер экрана (портретная ориентация телефона)
+		@media only screen and (max-width: $screen-xsmall) {
+		
+			&.xsmall-offset-0 {
+				margin-left: 0;
+			}
+			&.xsmall-auto {
+				flex-grow: 1;
+				flex-basis: auto;
+				max-width: none;
+			}
+		
+			@for $col from 1 through $grid-columns {
+			
+				&.xsmall-#{$col} {
+					flex-basis: $col / $grid-columns * 100%;
+					max-width: $col / $grid-columns * 100%;
+				}
+				&.xsmall-offset-#{$col} {
+					margin-left: $col / $grid-columns * 100%;
+				}
+				&.xsmall-order-#{$col} {
+					order: $col;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	> * {
+		
+		&.order-first,
+		&.large-order-first {
+			order: -1;
+		}
+		&.order-last,
+		&.large-order-last {
+			order: 9999;
+		}
+		
+		
+		// Большой размер экрана
+		@media only screen and (min-width: $screen-xlarge) {
+		
+			&.xlarge-order-first {
+				order: -1;
+			}
+			&.xlarge-order-last {
+				order: 9999;
+			}
+			
+		}
+
+
+		// Средний размер экрана (планшеты)
+		@media only screen and (max-width: $screen-medium) {
+		
+			&.medium-order-first {
+				order: -1;
+			}
+			&.medium-order-last {
+				order: 9999;
+			}
+			
+		}
+
+
+		// Малый размер экрана (телефоны)
+		@media only screen and (max-width: $screen-small) {
+		
+			&.small-order-first {
+				order: -1;
+			}
+			&.small-order-last {
+				order: 9999;
+			}
+			
+		}
+		
+		
+		// Очень малый размер экрана (портретная ориентация телефона)
+		@media only screen and (max-width: $screen-xsmall) {
+		
+			&.xsmall-order-first {
+				order: -1;
+			}
+			&.xsmall-order-last {
+				order: 9999;
+			}
+			
+		}
+		
+	}
+
+}
