@@ -2,7 +2,7 @@
 //	_utils.js | Vanilla JS
 //	Утилиты
 //
-//	Copyright © 2018 Andrey Shpigunov. All right reserved.
+//	Copyright © 2019 Andrey Shpigunov. All right reserved.
 //
 
 

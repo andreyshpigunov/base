@@ -2,7 +2,7 @@
 //	_device.js | Vanilla JS
 // Определение браузера, ОС и устройства
 //
-//	Copyright © 2018 Andrey Shpigunov. All right reserved.
+//	Copyright © 2019 Andrey Shpigunov. All right reserved.
 //
 
 

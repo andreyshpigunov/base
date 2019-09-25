@@ -4,13 +4,13 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	<title>Base</title>
+	<title>Base — библиотека базовых функция для сайта</title>
 	<link rel="stylesheet" href="css/docs.css" />
 </head>
 <body>
 <main>
 	<div class="ruler">
-		<span class="xsmall-show">small</span>
+		<span class="xsmall-show">xsmall</span>
 		<span class="small-show">small</span>
 		<span class="medium-show">medium</span>
 		<span class="large-show">large</span>
@@ -29,6 +29,7 @@
 <li><a data-scrollto="modal">Модальные окна</a></li>
 <li><a data-scrollto="animate">Анимации</a></li>
 <li><a data-scrollto="scrollto">Скроллер</a></li>
+<li><a data-scrollto="loadmore">Загрузчик</a></li>
 <li><a data-scrollto="buttons">Кнопки</a></li>
 <li><a data-scrollto="ajax">AJAX</a></li>
 </menu>
@@ -38,11 +39,11 @@
 <p>Расширяют функциональность элементов.</p>
 <h3>Ссылки</h3>
 <p>
-<code>.no-visited</code> — у ссылки, обрамленной в данный класс, отстуствует выделение <code>:visited</code><br/>
+<code>.no-visited</code> — у ссылки с данным класс убирает выделение <code>:visited</code><br/>
 <code>.pseudo</code> — псевдоссылка, подчеркнута точками<br/>
-<code>.no-border</code> — ссылка без бордюра
+<code>.no-border</code> — ссылка без подчеркивания
 </p>
-<p>Если в ссылке находится картинка, бордюр автоматически убирается, вернуть его можно добавив класс <code>.border</code>.
+<p>Если в ссылке находится картинка, подчеркивание убирается автоматически, вернуть его можно добавив класс <code>.border</code>.
 <h3>Хэлперы</h3>
 <p>
 <code>.unselectable</code> — запрещает выделение элемента<br/>
@@ -68,7 +69,7 @@
 </p>
 <h3>Экшн-классы</h3>
 <p>
-<code>.double-hover</code> — синхронное добавление класса <code>.hover</code> к ссылкам с одинаковым <code>href</code><br/>
+<code>.sync-hover, .double-hover</code> — синхронное добавление класса <code>.hover</code> к ссылкам с одинаковым <code>href</code><br/>
 <code>.is-appeared</code> — при появлении во viewport элементу присваиваются классы <code>.appeared</code> и <code>.visible</code><br/>
 при исчезновении из viewport класс <code>.visible</code> исчезает, а <code>.appeared</code> остается.
 </p>
@@ -320,21 +321,6 @@ if(Base.adaptive.xsmall){ ... }</xmp>
 <section id="modal">
 <h2>Модальные окна</h2>
 <p>Универсальное модальное окно.</p>
-<h3>JS API</h3>
-<p>
-<code>Base.modal.show(id)</code> — открыть окно<br/>
-<code>Base.modal.hide(id)</code> — закрыть окно
-</p>
-<h4>События</h4>
-<p>
-<code>modal:ready</code> — перед открытием окна<br/>
-<code>modal:open</code> — окно открыто<br/>
-<code>modal:close</code> — после закрытия окна<br/>
-</p>
-<div class="section-code">
-<xmp>var modal = document.getElementByID('modal-id');
-modal.addEventListener('modal:ready', function(event){ ... })</xmp>
-</div>
 <div class="section-example">
 <a class="button" data-modal="modal-main">default</a>
 <a class="button" data-modal="modal-effect-in">in</a>
@@ -430,6 +416,21 @@ modal.addEventListener('modal:ready', function(event){ ... })</xmp>
 	</div>
 </div></xmp>
 </div>
+<h3>JS API</h3>
+<p>
+<code>Base.modal.show(id)</code> — открыть окно<br/>
+<code>Base.modal.hide(id)</code> — закрыть окно
+</p>
+<h4>События</h4>
+<p>
+<code>modal:ready</code> — перед открытием окна<br/>
+<code>modal:open</code> — окно открыто<br/>
+<code>modal:close</code> — после закрытия окна<br/>
+</p>
+<div class="section-code">
+<xmp>var modal = document.getElementByID('modal-id');
+modal.addEventListener('modal:ready', function(event){ ... })</xmp>
+</div>
 </section>
 <section id="animate">
 <h2>Анимации</h2>
@@ -486,6 +487,34 @@ modal.addEventListener('modal:ready', function(event){ ... })</xmp>
 <xmp><a class="button" data-scrollto="top">Наверх</a></xmp>
 </div>
 </section>
+
+
+
+
+<section id="loadmore">
+	<h2>Загрузчик</h2>
+	
+	<p>
+		Запускает функцию подггрузки данных при прокрутке до конца блока.<br/>
+		Автоматически применяется к элементам с data-loadmore.
+	</p>
+	
+	<div class="section-code">
+		<xmp><div data-loadmore='{"FunctionName": "loadMore", "Offset": "100"}'>...</div>
+<script>function loadMore(page) {...}</script></xmp>
+	</div>
+	
+	<p>
+		<code>FunctionName</code> — название функции, выполняющей загрузку<br/>
+		<code>Offset</code> — смещение в пикселях (по умолчанию 0)
+	</p>
+	
+</section>
+
+
+
+
+
 <section id="lazyload">
 <h2>Lazyload</h2>
 <p>

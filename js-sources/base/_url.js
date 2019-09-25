@@ -2,7 +2,7 @@
 //	_url.js | Vanilla JS
 //	Работа с URL
 //
-//	Copyright © 2018 Andrey Shpigunov. All right reserved.
+//	Copyright © 2019 Andrey Shpigunov. All right reserved.
 //
 
 
@@ -32,9 +32,9 @@ var Base = (function (_base) {
 	}
 	
 	
-	function changeURL(url, title)
+	function updateURL(url, title)
 	// Изменение title и url страницы без перезагрузки
-	//	Можно добавить и просто хеш в конце: Base.url.changeURL('#ok')
+	//	Можно добавить и просто хеш в конце: Base.url.updateURL('#ok')
 	{
 		if (typeof (history.pushState) != 'undefined') {
 			history.pushState(null, title, url)
@@ -46,11 +46,20 @@ var Base = (function (_base) {
 	}
 	
 	
+	function changeURL(title, url)
+	{
+		updateURL(url, title)
+	}
+	
+	
 	_base.url = {
 		
 		reload: reload,
 		reloadWithHash: reloadWithHash,
 		redirectTo: redirectTo,
+		// новое имя функции
+		updateURL: updateURL,
+		// сохраняем совместимость
 		changeURL: changeURL
 		
 	}

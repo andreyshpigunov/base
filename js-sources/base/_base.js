@@ -2,7 +2,7 @@
 //	base.js
 //	Библиотека Base
 //
-//	Copyright © 2018 Andrey Shpigunov. All right reserved.
+//	Copyright © 2019 Andrey Shpigunov. All right reserved.
 //
 
 
@@ -14,6 +14,7 @@
 // @codekit-prepend "_blocks.js";
 // @codekit-prepend "_animate.js";
 // @codekit-prepend "_scroll.js";
+// @codekit-prepend "_loadmore.js";
 // @codekit-prepend "_modal.js";
 // @codekit-prepend "_appear.js";
 // @codekit-prepend "_utils.js";
