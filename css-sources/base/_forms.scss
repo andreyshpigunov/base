@@ -62,29 +62,57 @@ textarea {
 }
 
 
-input[readonly],
-input[readonly]:focus,
-textarea[readonly],
-textarea[readonly]:focus,
-select[readonly],
-select[readonly]:focus {
-	border-color: #ddd;
-	background: #f8f8f8;
-	box-shadow: none;
+input[type=text],
+input[type=password],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=number],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=time],
+input[type=url],
+input[type=month],
+input[type=week],
+textarea,
+select {
+	
+	[readonly],
+	[readonly]:focus {
+		border-color: #ddd;
+		background: #f8f8f8;
+		box-shadow: none;
+	}
 }
 
 
-input[disabled],
-input[disabled]:focus,
-textarea[disabled],
-textarea[disabled]:focus,
-select[disabled],
-select[disabled]:focus {
-	border-color: #ddd;
-	background: #f6f6f6;
-	color: #999;
-	cursor: not-allowed !important;
-	box-shadow: none;
+input[type=text],
+input[type=password],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=number],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=time],
+input[type=url],
+input[type=month],
+input[type=week],
+textarea,
+select {
+	
+	[disabled],
+	[disabled]:focus {
+		border-color: #ddd;
+		background: #f6f6f6;
+		color: #999;
+		cursor: not-allowed !important;
+		box-shadow: none;
+	}
 }
 
 ::placeholder {
