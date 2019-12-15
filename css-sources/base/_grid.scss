@@ -1,13 +1,12 @@
 //
-//	_grid_flex.scss
+//	_grid.scss
 //	Сетка на основе флексбокса
 //
 //	Copyright © 2019 Andrey Shpigunov. All right reserved.
 //
 
 
-.modules,
-.row {
+.modules {
 	margin-left: -$grid-gutters-large;
 	margin-right: -$grid-gutters-large;
 	margin-bottom: -$grid-gutters-large * 2;
@@ -24,8 +23,7 @@
 		margin-bottom: -$grid-gutters-small * 2;	
 	}
 	
-	> .module,
-	> .column {
+	> .module {
 		padding-left: $grid-gutters-large;
 		padding-right: $grid-gutters-large;
 		margin-bottom: $grid-gutters-large * 2;
@@ -43,13 +41,12 @@
 		}
 	}
 	
-	&.no-gutters {
+	&.-nearby {
 		margin-left: 0;
 		margin-right: 0;
 		margin-bottom: 0;
 		
-		> .module,
-		> .column {
+		> .module {
 			padding-left: 0;
 			padding-right: 0;
 			margin-bottom: 0;
@@ -59,245 +56,159 @@
 	&.-line {
 		margin-bottom: 0;
 		
-		> .module,
-		> .column {
+		> .module {
 			margin-bottom: 0;
 		}
 	}
 }
 
 
-.modules,
-.row {
-	position: relative;
+.flex,
+.modules {
 	display: flex;
-	flex-wrap: wrap;						/* по умолчанию в css — nowrap */
 	
-	> .separator {
+	> .linebreak {
 		width: 100% !important;
 	}
+	
+	
+	
 	
 //	Свойства флексбокс-контейнера
 //	-----------------------------
 	
-	&.direction-row,
-	&.large-direction-row {
-		flex-direction: row;
-	}
-	&.direction-row-reverse,
-	&.large-direction-row-reverse {
-		flex-direction: row-reverse;
-	}
-	&.direction-column,
-	&.large-direction-column {
-		flex-direction: column;
-	}
-	&.direction-column-reverse,
-	&.large-direction-column-reverse {
-		flex-direction: column-reverse;
-	}
 	
-	&.nowrap,
-	&.large-nowrap {
-		flex-wrap: nowrap;
-		white-space: normal;
-	}
-	&.wrap,
-	&.large-wrap {
-		flex-wrap: wrap;
-	}
-	&.wrap-reverse,
-	&.large-wrap-reverse {
-		flex-wrap: wrap-reverse;
-	}
-	
-	&.centered {
-		justify-content: center;
-	}
+	&.large-row { flex-direction: row; }
+	&.large-row-reverse { flex-direction: row-reverse; }
+	&.large-column { flex-direction: column; }
+	&.large-column-reverse { flex-direction: column-reverse; }
+	&.large-wrap { flex-wrap: wrap; }
+	&.large-wrap-reverse { flex-wrap: wrap-reverse; }
+	&.large-nowrap { flex-wrap: nowrap; white-space: normal; }
+	&.large-start { justify-content: flex-start; }
+	&.large-end { justify-content: flex-end; }
+	&.large-centered { justify-content: center; }
+	&.large-space-between { justify-content: space-between; }
+	&.large-space-around { justify-content: space-around; }
+	&.large-align-stretch { align-items: stretch; }
+	&.large-align-centered { align-items: center; }
 	
 	
-	@media only screen and (min-width: $screen-xlarge) {
+	@include screen-xlarge {
+	
+		&.xlarge-row { flex-direction: row; }
+		&.xlarge-row-reverse { flex-direction: row-reverse; }
+		&.xlarge-column { flex-direction: column; }
+		&.xlarge-column-reverse { flex-direction: column-reverse; }
+		&.xlarge-wrap { flex-wrap: wrap; }
+		&.xlarge-wrap-reverse { flex-wrap: wrap-reverse; }
+		&.xlarge-nowrap { flex-wrap: nowrap; white-space: normal; }
+		&.xlarge-start { justify-content: flex-start; }
+		&.xlarge-end { justify-content: flex-end; }
+		&.xlarge-centered { justify-content: center; }
+		&.xlarge-space-between { justify-content: space-between; }
+		&.xlarge-space-around { justify-content: space-around; }
+		&.xlarge-align-stretch { align-items: stretch; }
+		&.xlarge-align-centered { align-items: center; }
+	}
+	
+	
+	@include screen-medium {
+	
+		&.medium-row { flex-direction: row; }
+		&.medium-row-reverse { flex-direction: row-reverse; }
+		&.medium-column { flex-direction: column; }
+		&.medium-column-reverse { flex-direction: column-reverse; }
+		&.medium-wrap { flex-wrap: wrap; }
+		&.medium-wrap-reverse { flex-wrap: wrap-reverse; }
+		&.medium-nowrap { flex-wrap: nowrap; white-space: normal; }
+		&.medium-start { justify-content: flex-start; }
+		&.medium-end { justify-content: flex-end; }
+		&.medium-centered { justify-content: center; }
+		&.medium-space-between { justify-content: space-between; }
+		&.medium-space-around { justify-content: space-around; }
+		&.medium-align-stretch { align-items: stretch; }
+		&.medium-align-centered { align-items: center; }
+	
+	}
+	
+	
+	@include screen-small {
+	
+		&.small-row { flex-direction: row; }
+		&.small-row-reverse { flex-direction: row-reverse; }
+		&.small-column { flex-direction: column; }
+		&.small-column-reverse { flex-direction: column-reverse; }
+		&.small-wrap { flex-wrap: wrap; }
+		&.small-wrap-reverse { flex-wrap: wrap-reverse; }
+		&.small-nowrap { flex-wrap: nowrap; white-space: normal; }
+		&.small-start { justify-content: flex-start; }
+		&.small-end { justify-content: flex-end; }
+		&.small-centered { justify-content: center; }
+		&.small-space-between { justify-content: space-between; }
+		&.small-space-around { justify-content: space-around; }
+		&.small-align-stretch { align-items: stretch; }
+		&.small-align-centered { align-items: center; }
 		
-		&.xlarge-direction-row {
-			flex-direction: row;
-		}
-		&.xlarge-direction-row-reverse {
-			flex-direction: row-reverse;
-		}
-		&.xlarge-direction-column {
-			flex-direction: column;
-		}
-		&.xlarge-direction-column-reverse {
-			flex-direction: column-reverse;
-		}
-	
-		&.xlarge-nowrap {
-			flex-wrap: nowrap;
-			white-space: normal;
-		}
-		&.xlarge-wrap {
-			flex-wrap: wrap;
-		}
-		&.xlarge-wrap-reverse {
-			flex-wrap: wrap-reverse;
-		}
-	
 	}
 	
 	
-	@media only screen and (max-width: $screen-medium) {
+	@include screen-xsmall {
+	
+		&.xsmall-row { flex-direction: row; }
+		&.xsmall-row-reverse { flex-direction: row-reverse; }
+		&.xsmall-column { flex-direction: column; }
+		&.xsmall-column-reverse { flex-direction: column-reverse; }
+		&.xsmall-wrap { flex-wrap: wrap; }
+		&.xsmall-wrap-reverse { flex-wrap: wrap-reverse; }
+		&.xsmall-nowrap { flex-wrap: nowrap; white-space: normal; }
+		&.xsmall-start { justify-content: flex-start; }
+		&.xsmall-end { justify-content: flex-end; }
+		&.xsmall-centered { justify-content: center; }
+		&.xsmall-space-between { justify-content: space-between; }
+		&.xsmall-space-around { justify-content: space-around; }
+		&.xsmall-align-stretch { align-items: stretch; }
+		&.xsmall-align-centered { align-items: center; }
 		
-		&.medium-direction-row {
-			flex-direction: row;
-		}
-		&.medium-direction-row-reverse {
-			flex-direction: row-reverse;
-		}
-		&.medium-direction-column {
-			flex-direction: column;
-		}
-		&.medium-direction-column-reverse {
-			flex-direction: column-reverse;
-		}
-	
-		&.medium-nowrap {
-			flex-wrap: nowrap;
-			white-space: normal;
-		}
-		&.medium-wrap {
-			flex-wrap: wrap;
-		}
-		&.medium-wrap-reverse {
-			flex-wrap: wrap-reverse;
-		}
-	
 	}
 	
 	
-	@media only screen and (max-width: $screen-small) {
-		
-		&.small-direction-row {
-			flex-direction: row;
-		}
-		&.small-direction-row-reverse {
-			flex-direction: row-reverse;
-		}
-		&.small-direction-column {
-			flex-direction: column;
-		}
-		&.small-direction-column-reverse {
-			flex-direction: column-reverse;
-		}
-	
-		&.small-nowrap {
-			flex-wrap: nowrap;
-			white-space: normal;
-		}
-		&.small-wrap {
-			flex-wrap: wrap;
-		}
-		&.small-wrap-reverse {
-			flex-wrap: wrap-reverse;
-		}
-	
-	}
-	
-	
-	@media only screen and (max-width: $screen-xsmall) {
-		
-		&.xsmall-direction-row {
-			flex-direction: row;
-		}
-		&.xsmall-direction-row-reverse {
-			flex-direction: row-reverse;
-		}
-		&.xsmall-direction-column {
-			flex-direction: column;
-		}
-		&.xsmall-direction-column-reverse {
-			flex-direction: column-reverse;
-		}
-	
-		&.xsmall-nowrap {
-			flex-wrap: nowrap;
-			white-space: normal;
-		}
-		&.xsmall-wrap {
-			flex-wrap: wrap;
-		}
-		&.xsmall-wrap-reverse {
-			flex-wrap: wrap-reverse;
-		}
-	
-	}
 	
 		
 //	Свойства флексбокс-элемента
 //	---------------------------
 
-	> .module,
-	> .column {
+
+	> .module {
 		position: relative;
 		order: 0;
-		flex-grow: 0;			/* стандартно по умолчанию */
-		flex-shrink: 1;		/* стандартно по умолчанию */
-		flex-basis: 0;			/* по умолчанию в css — auto */
-		align-self: auto;		/* стандартно по умолчанию */
+		flex: 1;
 		max-width: 100%;
 		
-		&.flex {
-			display: flex;
-		}
-		
-		&.large-offset-0 {
-			margin-left: 0;
-		}
-		&.large-auto {
-			flex-grow: 1;
-			flex-basis: auto;
-			max-width: none;
-		}
+		&.large-offset-0 { margin-left: 0; }
+		&.large-auto { flex: 1 0 auto; max-width: none; }
 		
 		@for $col from 1 through $grid-columns {
 			
-			&.large-#{$col} {
-				flex-basis: $col / $grid-columns * 100%;
-				max-width: $col / $grid-columns * 100%;
-			}
-			&.large-offset-#{$col} {
-				margin-left: $col / $grid-columns * 100%;
-			}
-			&.large-order-#{$col} {
-				order: $col;
-			}
+			&.large-#{$col} { flex-basis: $col / $grid-columns * 100%; max-width: $col / $grid-columns * 100%; }
+			&.large-offset-#{$col} { margin-left: $col / $grid-columns * 100%; }
+			&.large-order-#{$col} { order: $col; }
 			
 		}
 		
 		
 		// Большой размер экрана
-		@media only screen and (min-width: $screen-xlarge) {
 		
-			&.xlarge-offset-0 {
-				margin-left: 0;
-			}
-			&.xlarge-auto {
-				flex-grow: 1;
-				flex-basis: auto;
-				max-width: none;
-			}
+		@include screen-xlarge {
+		
+			&.xlarge-offset-0 { margin-left: 0; }
+			&.xlarge-auto { flex: 1 0 auto; max-width: none; }
 			
 			@for $col from 1 through $grid-columns {
 			
-				&.xlarge-#{$col} {
-					flex-basis: $col / $grid-columns * 100%;
-					max-width: $col / $grid-columns * 100%;
-				}
-				&.xlarge-offset-#{$col} {
-					margin-left: $col / $grid-columns * 100%;
-				}
-				&.xlarge-order-#{$col} {
-					order: $col;
-				}
+				&.xlarge-#{$col} { flex-basis: $col / $grid-columns * 100%; max-width: $col / $grid-columns * 100%; }
+				&.xlarge-offset-#{$col} { margin-left: $col / $grid-columns * 100%; }
+				&.xlarge-order-#{$col} { order: $col; }
 				
 			}
 			
@@ -305,29 +216,16 @@
 
 
 		// Средний размер экрана (планшеты)
-		@media only screen and (max-width: $screen-medium) {
+		@include screen-medium {
 		
-			&.medium-offset-0 {
-				margin-left: 0;
-			}
-			&.medium-auto {
-				flex-grow: 1;
-				flex-basis: auto;
-				max-width: none;
-			}
+			&.medium-offset-0 { margin-left: 0; }
+			&.medium-auto { flex: 1 0 auto; max-width: none; }
 			
 			@for $col from 1 through $grid-columns {
 			
-				&.medium-#{$col} {
-					flex-basis: $col / $grid-columns * 100%;
-					max-width: $col / $grid-columns * 100%;
-				}
-				&.medium-offset-#{$col} {
-					margin-left: $col / $grid-columns * 100%;
-				}
-				&.medium-order-#{$col} {
-					order: $col;
-				}
+				&.medium-#{$col} { flex-basis: $col / $grid-columns * 100%; max-width: $col / $grid-columns * 100%; }
+				&.medium-offset-#{$col} { margin-left: $col / $grid-columns * 100%; }
+				&.medium-order-#{$col} { order: $col; }
 				
 			}
 			
@@ -335,29 +233,16 @@
 
 
 		// Малый размер экрана (телефоны)
-		@media only screen and (max-width: $screen-small) {
+		@include screen-small {
 		
-			&.small-offset-0 {
-				margin-left: 0;
-			}
-			&.small-auto {
-				flex-grow: 1;
-				flex-basis: auto;
-				max-width: none;
-			}
+			&.small-offset-0 { margin-left: 0; }
+			&.small-auto { flex: 1 0 auto; max-width: none; }
 			
 			@for $col from 1 through $grid-columns {
 			
-				&.small-#{$col} {
-					flex-basis: $col / $grid-columns * 100%;
-					max-width: $col / $grid-columns * 100%;
-				}
-				&.small-offset-#{$col} {
-					margin-left: $col / $grid-columns * 100%;
-				}
-				&.small-order-#{$col} {
-					order: $col;
-				}
+				&.small-#{$col} { flex-basis: $col / $grid-columns * 100%; max-width: $col / $grid-columns * 100%; }
+				&.small-offset-#{$col} { margin-left: $col / $grid-columns * 100%; }
+				&.small-order-#{$col} { order: $col; }
 				
 			}
 			
@@ -365,29 +250,16 @@
 		
 		
 		// Очень малый размер экрана (портретная ориентация телефона)
-		@media only screen and (max-width: $screen-xsmall) {
+		@include screen-xsmall {
 		
-			&.xsmall-offset-0 {
-				margin-left: 0;
-			}
-			&.xsmall-auto {
-				flex-grow: 1;
-				flex-basis: auto;
-				max-width: none;
-			}
+			&.xsmall-offset-0 { margin-left: 0; }
+			&.xsmall-auto { flex: 1 0 auto; max-width: none; }
 		
 			@for $col from 1 through $grid-columns {
 			
-				&.xsmall-#{$col} {
-					flex-basis: $col / $grid-columns * 100%;
-					max-width: $col / $grid-columns * 100%;
-				}
-				&.xsmall-offset-#{$col} {
-					margin-left: $col / $grid-columns * 100%;
-				}
-				&.xsmall-order-#{$col} {
-					order: $col;
-				}
+				&.xsmall-#{$col} { flex-basis: $col / $grid-columns * 100%; max-width: $col / $grid-columns * 100%; }
+				&.xsmall-offset-#{$col} { margin-left: $col / $grid-columns * 100%; }
+				&.xsmall-order-#{$col} { order: $col; }
 				
 			}
 			
@@ -397,64 +269,42 @@
 	
 	> * {
 		
-		&.order-first,
-		&.large-order-first {
-			order: -1;
-		}
-		&.order-last,
-		&.large-order-last {
-			order: 9999;
-		}
+		&.large-order-first { order: -1; }
+		&.large-order-last { order: 9999; }
 		
 		
 		// Большой размер экрана
-		@media only screen and (min-width: $screen-xlarge) {
+		@include screen-xlarge {
 		
-			&.xlarge-order-first {
-				order: -1;
-			}
-			&.xlarge-order-last {
-				order: 9999;
-			}
+			&.xlarge-order-first { order: -1; }
+			&.xlarge-order-last { order: 9999; }
 			
 		}
 
 
 		// Средний размер экрана (планшеты)
-		@media only screen and (max-width: $screen-medium) {
+		@include screen-medium {
 		
-			&.medium-order-first {
-				order: -1;
-			}
-			&.medium-order-last {
-				order: 9999;
-			}
+			&.medium-order-first { order: -1; }
+			&.medium-order-last { order: 9999; }
 			
 		}
 
 
 		// Малый размер экрана (телефоны)
-		@media only screen and (max-width: $screen-small) {
+		@include screen-small {
 		
-			&.small-order-first {
-				order: -1;
-			}
-			&.small-order-last {
-				order: 9999;
-			}
+			&.small-order-first { order: -1; }
+			&.small-order-last { order: 9999; }
 			
 		}
 		
 		
 		// Очень малый размер экрана (портретная ориентация телефона)
-		@media only screen and (max-width: $screen-xsmall) {
+		@include screen-xsmall {
 		
-			&.xsmall-order-first {
-				order: -1;
-			}
-			&.xsmall-order-last {
-				order: 9999;
-			}
+			&.xsmall-order-first { order: -1; }
+			&.xsmall-order-last { order: 9999; }
 			
 		}
 		

@@ -24,45 +24,45 @@
 	}
 }
 
-// Плавающие блоки
-.float-left {
-	float: left;
-}
-.float-right {
-	float: right;
+// Выравнивание текста
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+@include screen-xlarge {
+	.xlarge-text-left { text-align: left; }
+	.xlarge-text-center { text-align: center; }
+	.xlarge-text-right { text-align: right; }
 }
 
-// Выравнивание текста
-.text-left {
-	text-align: left;
+@include screen-medium {
+	.medium-text-left { text-align: left; }
+	.medium-text-center { text-align: center; }
+	.medium-text-right { text-align: right; }
 }
-.text-center {
-	text-align: center;
+
+@include screen-small {
+	.small-text-left { text-align: left; }
+	.small-text-center { text-align: center; }
+	.small-text-right { text-align: right; }
 }
-.text-right {
-	text-align: right;
+
+@include screen-xsmall {
+	.xsmall-text-left { text-align: left; }
+	.xsmall-text-center { text-align: center; }
+	.xsmall-text-right { text-align: right; }
 }
 
 // Регистр текста
-.text-uppercase {
-	text-transform: uppercase;
-}
-.text-lowercase {
-	text-transform: lowercase;
-}
-.text-capitalize {
-	text-transform: capitalize;
-}
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
 
 //	Непереносимый текст
-.nowrap {
-	white-space: nowrap;
-}
+.nowrap { white-space: nowrap; }
 
 //	Расстановка переносов
-.hyphens {
-	hyphens: auto;
-}
+.hyphens { hyphens: auto; }
 
 //	Обертка для видео, позволяющая масштабировать размер в зависимости от экрана
 .video {

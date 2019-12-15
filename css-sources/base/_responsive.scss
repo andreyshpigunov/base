@@ -38,90 +38,53 @@ img {
 	max-width: 100%;
 }
 
-.xsmall-show,
-.small-show,
-.medium-show,
-.large-show,
-.xlarge-show {
-	display: none;
+.large {
+	&-hide { display: none; }
+	&-show { display: block; }
+	&-show-inline { display: inline; }
+	&-show-inlineblock { display: inline-block; }
 }
 
-@media only screen and (max-width: $screen-xsmall) {
-
-	.xsmall-hide {
-		display: none !important;
-	}
-	.xsmall-show {
-		display: block;
-	}
-	.xsmall-show-inline {
-		display: inline;
-	}
-	.xsmall-show-inlineblock {
-		display: inline-block;
-	}
-}
-
-@media only screen and (min-width: $screen-xsmall + 1) and (max-width: $screen-small) {
-
-	.small-hide {
-		display: none !important;
-	}
-	.small-show {
-		display: block;
-	}
-	.small-show-inline {
-		display: inline;
-	}
-	.small-show-inlineblock {
-		display: inline-block;
-	}
-}
-
-@media only screen and (min-width: $screen-small + 1) and (max-width: $screen-medium) {
+@include screen-xlarge {
 	
-	.medium-hide {
-		display: none !important;
+	.xlarge {
+		&-hide { display: none; }
+		&-show { display: block; }
+		&-show-inline { display: inline; }
+		&-show-inlineblock { display: inline-block; }
 	}
-	.medium-show {
-		display: block;
-	}
-	.medium-show-inline {
-		display: inline;
-	}
-	.medium-show-inlineblock {
-		display: inline-block;
-	}
+	
 }
 
-@media only screen and (min-width: $screen-medium + 1) and (max-width: $screen-large) {
+@include screen-medium {
 	
-	.large-hide {
-		display: none !important;
+	.medium {
+		&-hide { display: none; }
+		&-show { display: block; }
+		&-show-inline { display: inline; }
+		&-show-inlineblock { display: inline-block; }
 	}
-	.large-show {
-		display: block;
-	}
-	.large-show-inline {
-		display: inline;
-	}
-	.large-show-inlineblock {
-		display: inline-block;
-	}
+	
 }
 
-@media only screen and (min-width: $screen-xlarge) {
+@include screen-small {
 	
-	.xlarge-hide {
-		display: none !important;
+	.small {
+		&-hide { display: none; }
+		&-show { display: block; }
+		&-show-inline { display: inline; }
+		&-show-inlineblock { display: inline-block; }
 	}
-	.xlarge-show {
-		display: block;
+	
+}
+
+@include screen-xsmall {
+	
+	.xsmall {
+		&-hide { display: none; }
+		&-show { display: block; }
+		&-show-inline { display: inline; }
+		&-show-inlineblock { display: inline-block; }
 	}
-	.xlarge-show-inline {
-		display: inline;
-	}
-	.xlarge-show-inlineblock {
-		display: inline-block;
-	}
+	
 }
