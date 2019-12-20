@@ -99,10 +99,12 @@ html.modal-active {
 		text-align: left;
 		background: #fff;
 		box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+		border-radius: 6px;
 		
 		@include screen-small {
 			padding: 40px 6vw;
 			box-shadow: none;
+			border-radius: 0;
 		}
 	}
 	
@@ -113,35 +115,53 @@ html.modal-active {
 		display: block;
 		position: absolute;
 		z-index: 10040;
-		top: 8px;
-		right: 8px;
+		top: 6px;
+		right: 6px;
 		width: 40px;
 		height: 40px;
-		line-height: 32px;
-		text-align: center;
-		font-family: 'Helvetica Neue', Helvetica, sans-serif;
-		font-size: 40px;
 		font-weight: 200;
-		color: rgba(#999, .5);
 		border: none;
 		border-radius: 100%;
-		opacity: 0;
-		will-change: color, opacity;
-		transition:
-			color .15s ease-out,
-			opacity .0s ease-out;
 		
-		&:hover,
-		&:active {
-			color: #f00;
+		will-change: opacity;
+		opacity: 0;
+		transition: opacity .15s ease-out;
+		
+		&:before,
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 19px;
+			left: 8px;
+			width: 24px;
+			height: 2px;
+			
+			will-change: color;
+			background: #ccc;
+			transition: background .15s ease-out;
+			transform-origin: center;
+		}
+		
+		&:before {
+			transform: rotate(-45deg);
+		}
+		&:after {
+			transform: rotate(45deg);
 		}
 	}
 	
 	&.active .modal-close {
 		opacity: 1;
-		transition:
-			color .15s ease-out,
-			opacity .2s ease-out;
+		
+		&:hover,
+		&:active {
+			
+			&:before,
+			&:after {
+				background: #f00;
+			}
+		}
 	}
 }
 
@@ -157,6 +177,7 @@ html.modal-active {
 	transition: visibility .1s;
 
 	.modal-overlay {
+		will-change: opacity;
 		opacity: 0;
 		transition: opacity .1s linear;
 	}
@@ -167,9 +188,11 @@ html.modal-active {
 	.modal-window {
 		will-change: opacity, transform;
 		opacity: 0;
+		transform: scale(0.975);
 		transition: all .1s ease-out;
 	}
 	&.active .modal-window {
+		transform: scale(1);
 		opacity: 1;
 	}
 

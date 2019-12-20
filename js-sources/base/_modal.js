@@ -49,7 +49,7 @@ var Base = (function (_base) {
 				'<div class="modal-outer">' +
 					'<div class="modal-inner">' +
 						'<div class="modal-window">' +
-							'<a class="modal-close">×</a>' +
+							'<a class="modal-close"></a>' +
 							 e.innerHTML +
 						'</div>' +
 					'</div>' +
@@ -94,11 +94,14 @@ var Base = (function (_base) {
 	
 	document.addEventListener('keydown', function (event) {
 		
-		var modalActive = document.querySelector('.modal.active');
+		var
+		modalsActive = document.querySelectorAll('.modal.active'),
+		modalActive = modalsActive[modalsActive.length - 1];
+		
 		if(modalActive && event.keyCode == 27)
 		{
 			event.preventDefault();
-			hide(event.target.closest('.modal').getAttribute('id'));
+			hide(modalActive.getAttribute('id'));
 		}
 	});
 	
