@@ -21,8 +21,6 @@
 .ml-auto { margin-left: auto !important; }
 .mr-auto { margin-right: auto !important; }
 .mx-auto { margin-left: auto !important; margin-right: auto !important; }
-.pt-auto { padding-top: auto !important; }
-.pb-auto { padding-bottom: auto !important; }
 
 
 @include screen-xlarge {
@@ -42,8 +40,6 @@
 	.xlarge-ml-auto { margin-left: auto !important; }
 	.xlarge-mr-auto { margin-right: auto !important; }
 	.xlarge-mx-auto { margin-left: auto !important; margin-right: auto !important; }
-	.xlarge-pt-auto { padding-top: auto !important; }
-	.xlarge-pb-auto { padding-bottom: auto !important; }
 }
 
 
@@ -64,8 +60,6 @@
 	.medium-ml-auto { margin-left: auto !important; }
 	.medium-mr-auto { margin-right: auto !important; }
 	.medium-mx-auto { margin-left: auto !important; margin-right: auto !important; }
-	.medium-pt-auto { padding-top: auto !important; }
-	.medium-pb-auto { padding-bottom: auto !important; }
 }
 
 
@@ -86,8 +80,6 @@
 	.small-ml-auto { margin-left: auto !important; }
 	.small-mr-auto { margin-right: auto !important; }
 	.small-mx-auto { margin-left: auto !important; margin-right: auto !important; }
-	.small-pt-auto { padding-top: auto !important; }
-	.small-pb-auto { padding-bottom: auto !important; }
 }
 
 
@@ -108,6 +100,4 @@
 	.xsmall-ml-auto { margin-left: auto !important; }
 	.xsmall-mr-auto { margin-right: auto !important; }
 	.xsmall-mx-auto { margin-left: auto !important; margin-right: auto !important; }
-	.xsmall-pt-auto { padding-top: auto !important; }
-	.xsmall-pb-auto { padding-bottom: auto !important; }
 }

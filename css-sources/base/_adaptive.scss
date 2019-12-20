@@ -7,7 +7,7 @@
 
 
 @mixin screen-xlarge {
-	@media (min-width: $screen-xlarge) { @content; }
+	@media (min-width: $screen-xlarge + 1) { @content; }
 }
 @mixin screen-large {
 	@media (max-width: $screen-large) { @content; }
@@ -38,20 +38,40 @@ img {
 	max-width: 100%;
 }
 
-.large {
-	&-hide { display: none; }
-	&-show { display: block; }
-	&-show-inline { display: inline; }
-	&-show-inlineblock { display: inline-block; }
+
+@media (min-width: $screen-large + 1) {
+	.xlarge-hide { display: none !important }
+}
+@media (min-width: $screen-medium + 1) and (max-width: $screen-large) {
+	.large-hide { display: none !important }
+}
+@media (min-width: $screen-small + 1) and (max-width: $screen-medium) {
+	.medium-hide { display: none !important }
+}
+@media (min-width: $screen-xsmall + 1) and (max-width: $screen-small) {
+	.small-hide { display: none !important }
+}
+@media (max-width: $screen-xsmall) {
+	.xsmall-hide { display: none !important }
+}
+
+
+
+
+/*.large {
+	&-hide { display: none !important; }
+	&-show { display: block !important; }
+	&-show-inline { display: inline !important; }
+	&-show-inlineblock { display: inline-block !important; }
 }
 
 @include screen-xlarge {
 	
 	.xlarge {
-		&-hide { display: none; }
-		&-show { display: block; }
-		&-show-inline { display: inline; }
-		&-show-inlineblock { display: inline-block; }
+		&-hide { display: none !important; }
+		&-show { display: block !important; }
+		&-show-inline { display: inline !important; }
+		&-show-inlineblock { display: inline-block !important; }
 	}
 	
 }
@@ -59,10 +79,10 @@ img {
 @include screen-medium {
 	
 	.medium {
-		&-hide { display: none; }
-		&-show { display: block; }
-		&-show-inline { display: inline; }
-		&-show-inlineblock { display: inline-block; }
+		&-hide { display: none !important; }
+		&-show { display: block !important; }
+		&-show-inline { display: inline !important; }
+		&-show-inlineblock { display: inline-block !important; }
 	}
 	
 }
@@ -70,10 +90,10 @@ img {
 @include screen-small {
 	
 	.small {
-		&-hide { display: none; }
-		&-show { display: block; }
-		&-show-inline { display: inline; }
-		&-show-inlineblock { display: inline-block; }
+		&-hide { display: none !important; }
+		&-show { display: block !important; }
+		&-show-inline { display: inline !important; }
+		&-show-inlineblock { display: inline-block !important; }
 	}
 	
 }
@@ -81,10 +101,10 @@ img {
 @include screen-xsmall {
 	
 	.xsmall {
-		&-hide { display: none; }
-		&-show { display: block; }
-		&-show-inline { display: inline; }
-		&-show-inlineblock { display: inline-block; }
+		&-hide { display: none !important; }
+		&-show { display: block !important; }
+		&-show-inline { display: inline !important; }
+		&-show-inlineblock { display: inline-block !important; }
 	}
 	
-}
+}*/

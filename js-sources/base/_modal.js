@@ -139,6 +139,7 @@ var Base = (function (_base) {
 				window.addEventListener('resize', cp = function (event) { _closerPosition(id) });
 				
 				html.classList.add('modal-active');
+				html.classList.add(id + '-active');
 			
 				modal.dispatchEvent(eventReady);
 				modalLevel++;
@@ -171,6 +172,7 @@ var Base = (function (_base) {
 		modal.classList.remove('active');
 		setTimeout(function () {
 			document.documentElement.classList.remove('modal-active');
+			document.documentElement.classList.remove(id + '-active');
 			modal.classList.remove('top', 'level-' + modalLevel);
 			modalLevel--;
 			modal.dispatchEvent(eventClose);
