@@ -55,56 +55,22 @@ img {
 	.xsmall-hide { display: none !important }
 }
 
-
-
-
-/*.large {
-	&-hide { display: none !important; }
-	&-show { display: block !important; }
-	&-show-inline { display: inline !important; }
-	&-show-inlineblock { display: inline-block !important; }
+.all-hide {
+	display: none !important;
 }
 
-@include screen-xlarge {
-	
-	.xlarge {
-		&-hide { display: none !important; }
-		&-show { display: block !important; }
-		&-show-inline { display: inline !important; }
-		&-show-inlineblock { display: inline-block !important; }
-	}
-	
+@media (min-width: $screen-large + 1) {
+	.xlarge-show { display: block !important }
 }
-
-@include screen-medium {
-	
-	.medium {
-		&-hide { display: none !important; }
-		&-show { display: block !important; }
-		&-show-inline { display: inline !important; }
-		&-show-inlineblock { display: inline-block !important; }
-	}
-	
+@media (min-width: $screen-medium + 1) and (max-width: $screen-large) {
+	.large-show { display: block !important }
 }
-
-@include screen-small {
-	
-	.small {
-		&-hide { display: none !important; }
-		&-show { display: block !important; }
-		&-show-inline { display: inline !important; }
-		&-show-inlineblock { display: inline-block !important; }
-	}
-	
+@media (min-width: $screen-small + 1) and (max-width: $screen-medium) {
+	.medium-show { display: block !important }
 }
-
-@include screen-xsmall {
-	
-	.xsmall {
-		&-hide { display: none !important; }
-		&-show { display: block !important; }
-		&-show-inline { display: inline !important; }
-		&-show-inlineblock { display: inline-block !important; }
-	}
-	
-}*/
+@media (min-width: $screen-xsmall + 1) and (max-width: $screen-small) {
+	.small-show { display: block !important }
+}
+@media (max-width: $screen-xsmall) {
+	.xsmall-show { display: block !important }
+}
