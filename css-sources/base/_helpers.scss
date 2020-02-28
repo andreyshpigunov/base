@@ -14,9 +14,8 @@
 
 // Клеарфикс
 .clear {
-	zoom: 1;
 	
-	&:before, &:after {
+	&:after {
 		content: '';
 		display: table;
 		width: 100%;

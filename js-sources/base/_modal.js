@@ -153,7 +153,8 @@ var Base = (function (_base) {
 				
 				if(
 					Base.device.iphone ||
-					Base.device.ipad
+					Base.device.ipad ||
+					Base.device.android
 				){
 					scrollPosition = window.scrollY;
 					document.body.style.position = 'fixed';
@@ -183,7 +184,8 @@ var Base = (function (_base) {
 		
 		if(
 			Base.device.iphone ||
-			Base.device.ipad
+			Base.device.ipad ||
+			Base.device.android
 		){
 			document.body.style.position = null;
 			document.body.style.top = null;
