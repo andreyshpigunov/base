@@ -186,6 +186,7 @@
 		flex: 1;
 		max-width: 100%;
 		
+		&.large-0 { flex: 0 0 auto; }
 		&.large-offset-0 { margin-left: 0; }
 		&.large-auto { flex: 1 0 auto; max-width: none; }
 		
@@ -202,6 +203,7 @@
 		
 		@include screen-xlarge {
 		
+			&.xlarge-0 { flex: 0 0 auto; }
 			&.xlarge-offset-0 { margin-left: 0; }
 			&.xlarge-auto { flex: 1 0 auto; max-width: none; }
 			
@@ -219,6 +221,7 @@
 		// Средний размер экрана (планшеты)
 		@include screen-medium {
 		
+			&.medium-0 { flex: 0 0 auto; }
 			&.medium-offset-0 { margin-left: 0; }
 			&.medium-auto { flex: 1 0 auto; max-width: none; }
 			
@@ -235,7 +238,8 @@
 
 		// Малый размер экрана (телефоны)
 		@include screen-small {
-		
+			
+			&.small-0 { flex: 0 0 auto; }
 			&.small-offset-0 { margin-left: 0; }
 			&.small-auto { flex: 1 0 auto; max-width: none; }
 			
@@ -253,6 +257,7 @@
 		// Очень малый размер экрана (портретная ориентация телефона)
 		@include screen-xsmall {
 		
+			&.xsmall-0 { flex: 0 0 auto; }
 			&.xsmall-offset-0 { margin-left: 0; }
 			&.xsmall-auto { flex: 1 0 auto; max-width: none; }
 		

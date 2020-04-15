@@ -2,7 +2,7 @@
 //	_base.scss
 //	Настройки по-умолчанию
 //
-//	Copyright © 2019 Andrey Shpigunov. All right reserved.
+//	Copyright © 2020 Andrey Shpigunov. All right reserved.
 //
 
 
@@ -55,6 +55,7 @@ $spacing-steps: 10 !default;					// Шаги отступов
 // Шрифт по умолчанию
 // ------------------
 
+$line-height: 1.5 !default;
 $font-size: 16px !default;
 $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !default;
 

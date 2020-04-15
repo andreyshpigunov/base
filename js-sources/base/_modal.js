@@ -175,10 +175,10 @@ var Base = (function (_base) {
 		
 		modal.classList.remove('active');
 		setTimeout(function () {
-			document.documentElement.classList.remove('modal-active');
 			document.documentElement.classList.remove(id + '-active');
 			modal.classList.remove('top', 'level-' + modalLevel);
 			modalLevel--;
+			if(modalLevel == 0) document.documentElement.classList.remove('modal-active');
 			modal.dispatchEvent(eventClose);
 		}, 400);
 		
