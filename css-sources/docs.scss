@@ -332,10 +332,6 @@ section {
 		margin: 1rem 0;
 		font-size: .9rem;
 		color: #111;
-		
-		@include screen-xsmall {
-			font-size: .8rem;	
-		}
 	}
 
 	a {
@@ -353,10 +349,6 @@ section {
 		color: #000;
 		background: #fff;
 		outline: solid 2px #fff;
-		
-		@include screen-small {
-			font-size: .7rem;
-		}
 	}
 	
 	table {
