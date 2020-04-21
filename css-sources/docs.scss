@@ -337,6 +337,14 @@ section {
 			font-size: .8rem;	
 		}
 	}
+
+	a {
+		display: inline-block;
+		max-width: 100%;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
 		
 	code {
 		margin: 0 2px;
@@ -345,6 +353,10 @@ section {
 		color: #000;
 		background: #fff;
 		outline: solid 2px #fff;
+		
+		@include screen-small {
+			font-size: .7rem;
+		}
 	}
 	
 	table {
