@@ -133,7 +133,7 @@ var Base = (function (_base) {
 			{
 				if(
 					item.Class != null &&
-					item.ClassRemove != null &&
+					item.ClassRemove == true &&
 					item.Element.classList.contains(item.Class)
 				){
 					item.Element.classList.remove(item.Class)
