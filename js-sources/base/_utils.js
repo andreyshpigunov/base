@@ -6,7 +6,7 @@
 //
 
 
-var Base = (function (_base) {
+Base.utils = (function () {
 	
 	
 	function random(a,b)
@@ -128,18 +128,14 @@ var Base = (function (_base) {
 	}
 	
 	
-	_base.utils = {
-		
+	return {
 		random: random,
 		price: price,
 		numberFormat: numberFormat,
 		numberDecline: numberDecline,
 		toggleActive: toggleActive,
 		loadScript: loadScript,
-		isEmail: isEmail
-		
+		isEmail: isEmail	
 	}
 	
-	return _base;
-	
-}(Base || {}));
+}());

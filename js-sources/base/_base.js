@@ -6,17 +6,20 @@
 //
 
 
-// @codekit-prepend "_init.js";
-// @codekit-prepend "_device.js";
-// @codekit-prepend "_adaptive.js";
-// @codekit-prepend "_polyfills.js";
-// @codekit-prepend "_lazyload.js";
-// @codekit-prepend "_blocks.js";
-// @codekit-prepend "_animate.js";
-// @codekit-prepend "_scroll.js";
-// @codekit-prepend "_loadmore.js";
-// @codekit-prepend "_modal.js";
-// @codekit-prepend "_appear.js";
-// @codekit-prepend "_utils.js";
-// @codekit-prepend "_url.js";
-// @codekit-prepend "_ajax.js";
+var Base = {};
+
+
+// @codekit-append "_init.js";
+// @codekit-append "_device.js";
+// @codekit-append "_adaptive.js";
+// @codekit-append "_polyfills.js";
+// @codekit-append "_lazyload.js";
+// @codekit-append "_blocks.js";
+// @codekit-append "_animate.js";
+// @codekit-append "_scroll.js";
+// @codekit-append "_loadmore.js";
+// @codekit-append "_modal.js";
+// @codekit-append "_appear.js";
+// @codekit-append "_utils.js";
+// @codekit-append "_url.js";
+// @codekit-append "_ajax.js";

@@ -9,7 +9,7 @@
 // if(Base.adaptive.small){ ... } - 720 и меньше и т. д.
 
 
-var Base = (function (_base) {
+Base.adaptive = (function () {
 
 	var breakpoints = {
 		xsmall: 420,
@@ -43,17 +43,13 @@ var Base = (function (_base) {
 		return window.innerWidth > breakpoints.xlarge
 	}
 	
-	_base.adaptive = {
-		
+	return {
 		breakpoints: breakpoints,
 		xsmall: xsmall,
 		small: small,
 		medium: medium,
 		large: large,
 		xlarge: xlarge
-		
 	}
 	
-	return _base;
-	
-}(Base || {}));
+}());

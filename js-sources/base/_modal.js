@@ -24,7 +24,7 @@
 //	</script>
 
 
-var Base = (function (_base) {
+Base.modal = (function () {
 
 //	Инициализируем окна
 	var
@@ -213,11 +213,9 @@ var Base = (function (_base) {
 		}
 	}
 	
-	_base.modal = {
+	return {
 		show: show,
 		hide: hide
 	}
 	
-	return _base;
-	
-}(Base || {}));
+}());

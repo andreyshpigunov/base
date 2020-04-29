@@ -6,7 +6,7 @@
 //
 
 
-var Base = (function (_base) {
+Base.url = (function () {
 	
 	
 	function reload()
@@ -52,8 +52,7 @@ var Base = (function (_base) {
 	}
 	
 	
-	_base.url = {
-		
+	return {
 		reload: reload,
 		reloadWithHash: reloadWithHash,
 		redirectTo: redirectTo,
@@ -66,4 +65,4 @@ var Base = (function (_base) {
 	
 	return _base;
 	
-}(Base || {}));
+}());

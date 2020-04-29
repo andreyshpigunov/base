@@ -8,7 +8,7 @@
 */
 
 
-var Base = (function (_base) {
+Base.ajax = (function () {
 	
 	function ajax(options) {
 		var methods = ['get', 'post', 'put', 'delete']
@@ -136,8 +136,6 @@ var Base = (function (_base) {
 		return encodeURIComponent(value)
 	}
 	
-	_base.ajax = ajax;
-	
-	return _base;
-	
+	return ajax;
+		
 }(Base || {}));

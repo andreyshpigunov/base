@@ -10,7 +10,7 @@
 // Нужно добавить к группе с блоками класс 'blocks-flex' (или 'inline-blocks-flex' для инлайновых блоков)
 
 
-var Base = (function (_base) {
+Base.blocks = (function () {
 
 	var blocks = document.querySelectorAll('.blocks.blocks-flex, .inline-blocks.inline-blocks-flex');
 	
@@ -58,6 +58,6 @@ var Base = (function (_base) {
 		}
 	}
 	
-	return _base;
+	return null;
 	
-}(Base || {}));
+}());

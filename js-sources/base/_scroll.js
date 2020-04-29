@@ -17,7 +17,7 @@
 // <a data-scrollto='{"Target": "top", "Speed": "1000", "Offset": "100", "ClassActive": "active"}'>Наверх</a>
 
 
-var Base = (function (_base) {
+Base.scroll = (function () {
 	
 
 // Направление скролла
@@ -200,8 +200,15 @@ var Base = (function (_base) {
 		return true
 	}
 		
-	_base.scrollTo = scrollTo;
+//	_base.scrollTo = scrollTo;
 	
-	return _base;
+//	return _base;
 	
-}(Base || {}));
+	return {
+		scrollTo: scrollTo
+	}
+	
+}());
+
+
+Base.scrollTo = Base.scroll.scrollTo;

@@ -10,7 +10,7 @@
 // Base.device.[ie|firefox|safari|webkit|chrome|opera|windows|macos|linux|ios|mobile|desktop|ipad|ipod|iphone|android|js]
 
 
-var Base = (function (_base) {
+Base.device = (function () {
 	
 	var
 	htmlElement_ = document.documentElement,
@@ -146,9 +146,7 @@ var Base = (function (_base) {
 	
 	classesHash.width = window.innerWidth;
 	classesHash.height = window.innerHeight;
+		
+	return classesHash;
 	
-	_base.device = classesHash;
-	
-	return _base;
-	
-}(Base || {}));
+}());

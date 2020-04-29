@@ -12,7 +12,7 @@
 // loadMore(page) {...}
 
 
-var Base = (function (_base) {
+Base.loadmore = (function () {
 	
 	var
 	blocks = document.querySelectorAll('[data-loadmore]'),
@@ -111,6 +111,6 @@ var Base = (function (_base) {
 		return true
 	}
 	
-	return _base;
+	return null;
 	
-}(Base || {}));
+}());

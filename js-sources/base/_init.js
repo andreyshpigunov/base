@@ -8,7 +8,7 @@
 
 
 
-var Base = (function (_base) {
+Base.init = (function () {
 
 	var html = document.documentElement;
 
@@ -87,6 +87,6 @@ var Base = (function (_base) {
 		});
 	}
 	
-	return _base;
+	return null;
 	
-}(Base || {}));
+}());

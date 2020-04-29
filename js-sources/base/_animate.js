@@ -6,7 +6,7 @@
 //
 
 
-var Base = (function (_base) {
+Base = (function () {
 
 	var animations = document.querySelectorAll('[data-animate]');
 	
@@ -167,6 +167,6 @@ var Base = (function (_base) {
 		return(result);
 	}
 	
-	return _base;
+	return null;
 	
-}(Base || {}));
+}());

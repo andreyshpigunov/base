@@ -10,7 +10,7 @@
 // И класс visible для элементов, которые находятся во viewport.
 
 
-var Base = (function (_base) {
+Base.appear = (function () {
 	
 	var
 	_classIsAppeared = 'is-appeared',
@@ -87,6 +87,6 @@ var Base = (function (_base) {
 		})
 	}
 	
-	return _base;
+	return null;
 	
-}(Base || {}));
+}());
