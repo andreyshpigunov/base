@@ -61,16 +61,21 @@
 		}
 	}
 }
+	
+.flex-linebreak {
+	flex-basis: 100% !important;
+	height: 0 !important;
+}
 
+.flex-colbreak {
+	flex-basis: 100% !important;
+	width: 0 !important;
+}
 
 .flex,
 .modules {
 	display: flex;
 	flex-wrap: wrap;
-	
-	> .linebreak {
-		width: 100% !important;
-	}
 	
 	
 	

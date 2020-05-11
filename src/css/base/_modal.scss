@@ -25,22 +25,16 @@ html.modal-active {
 //	------------
 .modal {
 	position: fixed;
-	z-index: -1;
-	top: -100px;
-	bottom: -100px;
+	z-index: -10000;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 100px 0;
 	padding: 0;
 	visibility: hidden;
 	
 	&.top {
 		z-index: 10000;
-	}
-
-	&.active {
 		visibility: visible;
 	}
 	
@@ -173,7 +167,6 @@ html.modal-active {
 
 
 .modal {
-	transition: visibility .1s;
 
 	.modal-overlay {
 		will-change: opacity;

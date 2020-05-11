@@ -10,3 +10,5 @@ profile
 
 # sass noise
 .sass-cache
+
+node_modules/

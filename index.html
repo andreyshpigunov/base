@@ -266,18 +266,17 @@
 					
 					<p>Чтобы создать кнопку, надо добавить элементу класс <code>.button</code>.</p>
 					
-					<div class="section-example"><a class="button">.button</a>
+					<div class="section-example">
+						<a class="button">.button</a>
 						<a class="button -bold">.button.-bold</a>
 						<a class="button -bordered">.button.-bordered</a>
 						
 						<div style="height: 6px"></div>
 						<a class="button -large">.button.-large</a>
 						<a class="button -small">.button.-small</a>
-						<a class="button -xsmall">.button.-xsmall</a></div>
-					
-					<div class="section-code">
-						<xmp><a class="button">.button</a></xmp>
+						<a class="button -xsmall">.button.-xsmall</a>
 					</div>
+					
 					<script async src="//jsfiddle.net/andreyshpigunov/pc2tvj05/embed/html,css,js,result/dark/"></script>
 				</section>
 				
@@ -305,6 +304,16 @@
 						<code>Base.modal.show(id)</code> — открыть окно<br/>
 						<code>Base.modal.hide(id)</code> — закрыть окно
 					</p>
+          
+          <a data-modal="modal-test">TEST</a>
+          <a onclick="Base.modal.show('modal-test')">API SHOW</a>
+          <div id="modal-test" class="modal-content">
+            <div class="text">
+              <h2>Модальные окна</h2>
+    					<p>Универсальное модальное окно.</p>
+    					<p>По умолчанию код модального окна добавляется в конец тега body, но если необходимо расположить его в другом месте, нужно добавить блоку, где должен расположиться код окна, класс <code>.modal-here</code></p>
+            </div>
+          </div>
 					
 					<h3>События</h3>
 					<p>
@@ -442,6 +451,12 @@
 		
 		<script src="js/base.js" ></script>
 		<script>
+//      console.log(base);
+
+//      Base = base.Base;
+      
+      Base.modal.show('modal-test');
+      
 			var
 			html = document.documentElement,
 			mobileButton = document.querySelector('.header-menu-mobile_button');
