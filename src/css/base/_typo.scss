@@ -11,7 +11,7 @@ input,
 textarea,
 select,
 button {
-	font-synthesis: none;
+	font-synthesis: initial;
 	text-rendering: optimizeLegibility;
 	-moz-font-feature-settings: 'liga', 'kern';
 }
