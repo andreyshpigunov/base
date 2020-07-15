@@ -85,19 +85,20 @@ export function toggleActive(elementSelector, readyClass, activeClass, inactiveC
 var loaded = [];
 // Загружаем скрипт и добавляем его в конец body
 // Передаем callback, запускаемый после загрузки скрипта
-// Base.utils.loadScript('/path/to/file.js', function () { Callback function... })
-export function loadScript(path, callback) {
+// Base.utils.loadScript('/path/to/file.js', function () { Callback function... }, async|defer)
+export function loadScript(path, callback, type) {
   if (loaded.indexOf(path) == -1) {
     var script = document.createElement('script');
     script.onload = function () {
-      callback()
+		if (typeof callback === "function") { callback() }
     };
     
     script.src = path;
+	 if (type) script.setAttribute(type, '');
     document.body.appendChild(script);
     loaded.push(path);
   } else {
-    callback()
+    if (typeof callback === "function") { callback() }
   }
 }
 
