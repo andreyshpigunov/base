@@ -20,6 +20,7 @@ import * as url from './base/_url';
 import * as utils from './base/_utils';
 import ajax from './base/_ajax';
 import polyfills from './base/_polyfills';
+import Cookies from 'js-cookie';
 
 
 const Base = function () {
@@ -32,7 +33,8 @@ const Base = function () {
     scrollTo: scroll.scrollTo,
     url: url,
     utils: utils,
-    ajax: ajax
+    ajax: ajax,
+	 cookies: Cookies
   }
   
 }();
