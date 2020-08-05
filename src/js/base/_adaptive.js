@@ -33,6 +33,6 @@ export function large() {
 }
 
 export function xlarge() {
-  return window.innerWidth > breakpoints.xlarge
+  return window.innerWidth > breakpoints.large
 }
 

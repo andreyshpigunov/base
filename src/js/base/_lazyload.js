@@ -57,6 +57,9 @@ const lazyload = function () {
           img.className += ' loaded';
         }
       })
+		.catch(function() {
+			return false
+		})
     }
     
     const handleIntersection = function (entries, observer) {
