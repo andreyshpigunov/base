@@ -19,10 +19,10 @@ export function price(price) {
 
 // Форматирование чисел
 export function numberFormat(a) {
-  a += '',
-  x = a.split('.'),
-  x1 = x[0],
-  x2 = x.length > 1 ? '.' + x[1] : '';
+  a += '';
+  let x = a.split('.');
+  let x1 = x[0];
+  let x2 = x.length > 1 ? '.' + x[1] : '';
   for (var b = /(\d+)(\d{3})/; b.test(x1);)
 	x1 = x1.replace(b, '$1 $2');
   return x1 + x2
