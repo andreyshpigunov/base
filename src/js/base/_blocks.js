@@ -38,7 +38,8 @@ const blocks = function () {
     var max = count * item.rows;
     var children = item.blocks.children;
     
-    if (count == 0) count == 1;
+    if (count == 0) count = 1;
+    if (max < item.rows) max = item.rows;
     
     if (children.length) {
       Object.keys(children).forEach(function(i) {
